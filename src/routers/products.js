@@ -4,6 +4,7 @@ import {
   addProductController,
   getAllProductsController,
   getProductByIdConstroller,
+  patchProductController,
 } from '../controllers/products.js';
 
 const productsRouter = Router();
@@ -13,5 +14,7 @@ productsRouter.get('/', ctrlWrapper(getAllProductsController));
 productsRouter.get('/:id', ctrlWrapper(getProductByIdConstroller));
 
 productsRouter.post('/', ctrlWrapper(addProductController));
+
+productsRouter.patch('/:id', ctrlWrapper(patchProductController));
 
 export default productsRouter;
